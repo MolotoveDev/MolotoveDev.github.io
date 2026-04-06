@@ -1,11 +1,419 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Àlex Carrasco — Dev Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Hello World</h1>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">àlex<span class="accent">.</span></a>
+      <div class="nav-links">
+        <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+        <a href="#education" data-i18n="nav.education">Formación</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+        <a href="#contact" data-i18n="nav.contact">Contacto</a>
+      </div>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang="ca">CA</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+      <a href="#education" data-i18n="nav.education">Formación</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="#contact" data-i18n="nav.contact">Contacto</a>
+      <div class="mobile-lang">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang="ca">CA</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <p class="hero-tag" data-i18n="hero.tag">&lt; Desarrollador Web &gt;</p>
+      <h1 class="hero-name">Àlex<br><span class="hero-name-last">Carrasco</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">Desarrollo aplicaciones web modernas. Basado en <span class="accent">Girona</span>.</p>
+      <div class="hero-cta">
+        <a href="#experience" class="btn-primary" data-i18n="hero.cta">Ver mi trabajo</a>
+        <a href="#contact" class="btn-ghost" data-i18n="hero.cta2">Contactar</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-ring">
+        <svg viewBox="0 0 120 120" class="badge-svg">
+          <defs>
+            <path id="circle-path" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0"/>
+          </defs>
+          <text class="badge-text">
+            <textPath href="#circle-path">WEB DEV · GIRONA · 2005 · </textPath>
+          </text>
+        </svg>
+        <span class="badge-center">AC</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span class="scroll-line"></span>
+      <span class="scroll-label" data-i18n="hero.scroll">scroll</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section reveal">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-text">
+          <p class="section-eyebrow" data-i18n="about.eyebrow">// sobre mí</p>
+          <h2 class="section-title" data-i18n="about.title">Un desarrollador con ganas de crecer</h2>
+          <p class="about-body" data-i18n="about.body">Intento dar lo mejor de mí y hacer un trabajo en equipo lo más correcto posible, creando un buen ambiente de compañerismo. Busco formarme constantemente y conseguir la mayor experiencia en cualquier ámbito. Me comprometo con mi trabajo y tengo afán de superación.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num">3+</span>
+            <span class="stat-label" data-i18n="about.stat1">años de experiencia</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">3</span>
+            <span class="stat-label" data-i18n="about.stat2">idiomas</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">21</span>
+            <span class="stat-label" data-i18n="about.stat3">años</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section reveal">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="exp.eyebrow">// experiencia profesional</p>
+      <h2 class="section-title" data-i18n="exp.title">Dónde he trabajado</h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <h3 class="tcard-role" data-i18n="exp.job1.role">Desarrollador Web</h3>
+                <p class="tcard-company">Comput · Girona</p>
+              </div>
+              <span class="tcard-date">2026 — <span data-i18n="exp.present">Actual</span></span>
+            </div>
+            <ul class="tcard-list">
+              <li data-i18n="exp.job1.t1">Desarrollo de aplicativos con PHP 5.4, Python y Angular.</li>
+              <li data-i18n="exp.job1.t2">Desarrollo dentro de entorno ERP propio.</li>
+              <li data-i18n="exp.job1.t3">Comunicación y trabajo en equipo.</li>
+              <li data-i18n="exp.job1.t4">Aprendizaje constante sobre tecnologías de uso propio.</li>
+            </ul>
+            <div class="tcard-tags">
+              <span class="tag">PHP 5.4</span>
+              <span class="tag">Python</span>
+              <span class="tag">Angular</span>
+              <span class="tag">ERP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <h3 class="tcard-role" data-i18n="exp.job2.role">Promotor</h3>
+                <p class="tcard-company">Vieta · Girona</p>
+              </div>
+              <span class="tcard-date">Feb 2025 — Sep 2025</span>
+            </div>
+            <ul class="tcard-list">
+              <li data-i18n="exp.job2.t1">Trato directo con el cliente.</li>
+              <li data-i18n="exp.job2.t2">Organización de expositores de venta.</li>
+              <li data-i18n="exp.job2.t3">Habilidades de ventas.</li>
+            </ul>
+            <div class="tcard-tags">
+              <span class="tag" data-i18n="tag.sales">Ventas</span>
+              <span class="tag" data-i18n="tag.client">Atención al cliente</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <h3 class="tcard-role" data-i18n="exp.job3.role">Técnico en Telecomunicaciones</h3>
+                <p class="tcard-company">Xtecnic · Girona</p>
+              </div>
+              <span class="tcard-date">Nov 2023 — Sep 2024</span>
+            </div>
+            <ul class="tcard-list">
+              <li data-i18n="exp.job3.t1">Instalación y reparación en infraestructuras comunes de telecomunicaciones (ICT).</li>
+              <li data-i18n="exp.job3.t2">Instalación y mantenimiento de sistemas CCTV.</li>
+              <li data-i18n="exp.job3.t3">Instalación y reparación de porteros y videoporteros electrónicos.</li>
+            </ul>
+            <div class="tcard-tags">
+              <span class="tag">ICT</span>
+              <span class="tag">CCTV</span>
+              <span class="tag" data-i18n="tag.telecom">Telecomunicaciones</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section reveal">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="edu.eyebrow">// formación</p>
+      <h2 class="section-title" data-i18n="edu.title">Mi recorrido académico</h2>
+      <div class="edu-grid">
+
+        <div class="edu-card reveal-item">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-info">
+            <span class="edu-date">2024 — <span data-i18n="exp.present">Actual</span></span>
+            <h3 data-i18n="edu.cfgs.title">CFGS Desarrollo de Aplicaciones Web</h3>
+            <p class="edu-school">Institut Montilivi · Girona</p>
+            <p class="edu-desc" data-i18n="edu.cfgs.desc">Bases de datos, HTML5, C#, programación web y entornos de programación.</p>
+          </div>
+        </div>
+
+        <div class="edu-card reveal-item">
+          <div class="edu-icon">⚡</div>
+          <div class="edu-info">
+            <span class="edu-date">2024</span>
+            <h3 data-i18n="edu.cfgm.title">CFGM Electrónica y Telecomunicaciones</h3>
+            <p class="edu-school">Narcís Xifra Masmitjà · Girona</p>
+            <p class="edu-desc" data-i18n="edu.cfgm.desc">Sistemas eléctricos, electrónicos e informáticos, ICT, redes cableadas e inalámbricas.</p>
+          </div>
+        </div>
+
+        <div class="edu-card reveal-item">
+          <div class="edu-icon">🏫</div>
+          <div class="edu-info">
+            <span class="edu-date">2021</span>
+            <h3 data-i18n="edu.eso.title">Educación Secundaria Obligatoria</h3>
+            <p class="edu-school">La Salle Girona · Girona</p>
+          </div>
+        </div>
+
+        <div class="edu-card reveal-item">
+          <div class="edu-icon">🌐</div>
+          <div class="edu-info">
+            <span class="edu-date">2022</span>
+            <h3 data-i18n="edu.b2.title">Inglés B2 "First"</h3>
+            <p class="edu-school">Escola Oficial d'Idiomes · Girona</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section reveal">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="skills.eyebrow">// habilidades técnicas</p>
+      <h2 class="section-title" data-i18n="skills.title">Tech stack</h2>
+      <div class="skills-layout">
+
+        <div class="skills-group reveal-item">
+          <h4 class="skills-group-title" data-i18n="skills.web">Web & Backend</h4>
+          <div class="skill-pills">
+            <span class="pill pill-hot">PHP 5.4</span>
+            <span class="pill pill-hot">Python</span>
+            <span class="pill pill-hot">Angular</span>
+            <span class="pill pill-mid">HTML5</span>
+            <span class="pill pill-mid">JavaScript</span>
+            <span class="pill pill-mid">SQL</span>
+            <span class="pill pill-mid">C#</span>
+            <span class="pill pill-mid">.NET 8</span>
+          </div>
+        </div>
+
+        <div class="skills-group reveal-item">
+          <h4 class="skills-group-title" data-i18n="skills.tools">Herramientas</h4>
+          <div class="skill-pills">
+            <span class="pill pill-mid">Visual Studio</span>
+            <span class="pill pill-mid">ERP Systems</span>
+            <span class="pill pill-low">Git</span>
+          </div>
+        </div>
+
+        <div class="skills-group reveal-item">
+          <h4 class="skills-group-title" data-i18n="skills.infra">Infraestructura</h4>
+          <div class="skill-pills">
+            <span class="pill pill-mid">ICT</span>
+            <span class="pill pill-mid">CCTV</span>
+            <span class="pill pill-mid" data-i18n="skills.networks">Redes</span>
+            <span class="pill pill-mid" data-i18n="skills.hardware">Hardware PC</span>
+          </div>
+        </div>
+
+        <div class="skills-group reveal-item">
+          <h4 class="skills-group-title" data-i18n="skills.soft">Soft Skills</h4>
+          <div class="skill-pills">
+            <span class="pill pill-soft" data-i18n="skill.teamwork">Trabajo en equipo</span>
+            <span class="pill pill-soft" data-i18n="skill.learn">Aprendizaje continuo</span>
+            <span class="pill pill-soft" data-i18n="skill.proactive">Proactividad</span>
+            <span class="pill pill-soft" data-i18n="skill.client">Atención al cliente</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section id="languages" class="section reveal">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="lang.eyebrow">// idiomas</p>
+      <h2 class="section-title" data-i18n="lang.title">Comunicación</h2>
+      <div class="lang-cards">
+
+        <div class="lang-card reveal-item">
+          <div class="lang-flag">🇪🇸</div>
+          <h3 data-i18n="lang.es.name">Castellano</h3>
+          <p data-i18n="lang.native">Lengua nativa</p>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+        </div>
+
+        <div class="lang-card reveal-item">
+          <div class="lang-flag">🏴󠁥󠁳󠁣󠁴󠁿</div>
+          <h3 data-i18n="lang.ca.name">Català</h3>
+          <p data-i18n="lang.native">Llengua materna</p>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+        </div>
+
+        <div class="lang-card reveal-item">
+          <div class="lang-flag">🇬🇧</div>
+          <h3 data-i18n="lang.en.name">English</h3>
+          <p>B2 "First" — EOI Girona</p>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:72%"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section reveal">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="proj.eyebrow">// proyectos personales</p>
+      <h2 class="section-title" data-i18n="proj.title">Lo que estoy construyendo</h2>
+      <div class="projects-grid">
+
+        <div class="project-card reveal-item project-placeholder">
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <span class="project-num">01</span>
+            <div class="project-links">
+              <a href="#" class="icon-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 data-i18n="proj.p1.title">Portfolio Personal</h3>
+          <p data-i18n="proj.p1.desc">Este mismo portfolio. Diseñado y desarrollado con HTML, CSS y JavaScript vanilla, con soporte multilingüe.</p>
+          <div class="project-stack">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal-item project-placeholder coming-soon">
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <span class="project-num">02</span>
+          </div>
+          <h3 data-i18n="proj.p2.title">Próximamente...</h3>
+          <p data-i18n="proj.p2.desc">Aquí aparecerá el próximo proyecto. ¡Estay atento!</p>
+          <div class="coming-tag" data-i18n="proj.wip">En construcción 🚧</div>
+        </div>
+
+        <div class="project-card reveal-item project-placeholder coming-soon">
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <span class="project-num">03</span>
+          </div>
+          <h3 data-i18n="proj.p3.title">Próximamente...</h3>
+          <p data-i18n="proj.p3.desc">Más proyectos en camino.</p>
+          <div class="coming-tag" data-i18n="proj.wip">En construcción 🚧</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section reveal">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="contact.eyebrow">// contacto</p>
+      <h2 class="section-title" data-i18n="contact.title">Hablemos</h2>
+      <div class="contact-layout">
+        <div class="contact-text">
+          <p data-i18n="contact.body">¿Tienes un proyecto interesante o una oferta de trabajo? Estaré encantado de escucharte.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:alex.carrasco005@gmail.com" class="contact-item">
+            <span class="contact-icon">✉</span>
+            <span>alex.carrasco005@gmail.com</span>
+          </a>
+          <a href="tel:+34622263570" class="contact-item">
+            <span class="contact-icon">📱</span>
+            <span>622 263 570</span>
+          </a>
+          <a href="tel:+34972200488" class="contact-item">
+            <span class="contact-icon">📞</span>
+            <span>972 200 488</span>
+          </a>
+          <div class="contact-item no-link">
+            <span class="contact-icon">📍</span>
+            <span>Girona, Catalunya</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">àlex<span class="accent">.</span></span>
+      <p data-i18n="footer.made">Diseñado y desarrollado por Àlex Carrasco · 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
