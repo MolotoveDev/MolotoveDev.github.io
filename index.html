@@ -11,9 +11,6 @@
 </head>
 <body>
 
-  <!-- NOISE OVERLAY -->
-  <div class="noise"></div>
-
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
@@ -32,6 +29,7 @@
         <span class="lang-sep">/</span>
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
+      <button class="theme-toggle" data-theme-toggle aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -48,14 +46,13 @@
         <button class="lang-btn" data-lang="ca">CA</button>
         <span class="lang-sep">/</span>
         <button class="lang-btn" data-lang="en">EN</button>
+        <button class="theme-toggle" data-theme-toggle aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="hero-glow"></div>
     <div class="hero-content">
       <p class="hero-tag" data-i18n="hero.tag">&lt; Desarrollador Web &gt;</p>
       <h1 class="hero-name">Àlex<br><span class="hero-name-last">Carrasco</span></h1>
@@ -65,30 +62,13 @@
         <a href="#contact" class="btn-ghost" data-i18n="hero.cta2">Contactar</a>
       </div>
     </div>
-    <div class="hero-badge">
-      <div class="badge-ring">
-        <svg viewBox="0 0 120 120" class="badge-svg">
-          <defs>
-            <path id="circle-path" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0"/>
-          </defs>
-          <text class="badge-text">
-            <textPath href="#circle-path">WEB DEV · GIRONA · 2005 · </textPath>
-          </text>
-        </svg>
-        <span class="badge-center">AC</span>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <span class="scroll-line"></span>
-      <span class="scroll-label" data-i18n="hero.scroll">scroll</span>
-    </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="section reveal">
     <div class="container">
       <div class="about-layout">
-        <div class="about-text">
+        <div>
           <p class="section-eyebrow" data-i18n="about.eyebrow">// sobre mí</p>
           <h2 class="section-title" data-i18n="about.title">Un desarrollador con ganas de crecer</h2>
           <p class="about-body" data-i18n="about.body">Intento dar lo mejor de mí y hacer un trabajo en equipo lo más correcto posible, creando un buen ambiente de compañerismo. Busco formarme constantemente y conseguir la mayor experiencia en cualquier ámbito. Me comprometo con mi trabajo y tengo afán de superación.</p>
@@ -306,21 +286,21 @@
           <div class="lang-flag">🇪🇸</div>
           <h3 data-i18n="lang.es.name">Castellano</h3>
           <p data-i18n="lang.native">Lengua nativa</p>
-          <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+          <div class="lang-bar"><div class="lang-bar-fill level-100"></div></div>
         </div>
 
         <div class="lang-card reveal-item">
           <div class="lang-flag">🏴󠁥󠁳󠁣󠁴󠁿</div>
           <h3 data-i18n="lang.ca.name">Català</h3>
           <p data-i18n="lang.native">Llengua materna</p>
-          <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+          <div class="lang-bar"><div class="lang-bar-fill level-100"></div></div>
         </div>
 
         <div class="lang-card reveal-item">
           <div class="lang-flag">🇬🇧</div>
           <h3 data-i18n="lang.en.name">English</h3>
           <p>B2 "First" — EOI Girona</p>
-          <div class="lang-bar"><div class="lang-bar-fill" style="width:72%"></div></div>
+          <div class="lang-bar"><div class="lang-bar-fill level-72"></div></div>
         </div>
 
       </div>
@@ -335,7 +315,6 @@
       <div class="projects-grid">
 
         <div class="project-card reveal-item project-placeholder">
-          <div class="project-glow"></div>
           <div class="project-top">
             <span class="project-num">01</span>
             <div class="project-links">
@@ -352,7 +331,6 @@
         </div>
 
         <div class="project-card reveal-item project-placeholder coming-soon">
-          <div class="project-glow"></div>
           <div class="project-top">
             <span class="project-num">02</span>
           </div>
@@ -362,7 +340,6 @@
         </div>
 
         <div class="project-card reveal-item project-placeholder coming-soon">
-          <div class="project-glow"></div>
           <div class="project-top">
             <span class="project-num">03</span>
           </div>
@@ -381,9 +358,7 @@
       <p class="section-eyebrow" data-i18n="contact.eyebrow">// contacto</p>
       <h2 class="section-title" data-i18n="contact.title">Hablemos</h2>
       <div class="contact-layout">
-        <div class="contact-text">
-          <p data-i18n="contact.body">¿Tienes un proyecto interesante o una oferta de trabajo? Estaré encantado de escucharte.</p>
-        </div>
+        <p class="contact-intro" data-i18n="contact.body">¿Tienes un proyecto interesante o una oferta de trabajo? Estaré encantado de escucharte.</p>
         <div class="contact-links">
           <a href="mailto:alex.carrasco005@gmail.com" class="contact-item">
             <span class="contact-icon">✉</span>

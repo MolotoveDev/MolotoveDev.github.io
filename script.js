@@ -237,6 +237,21 @@ const i18n = {
 =========================== */
 let currentLang = 'es';
 
+const themeLabelMap = {
+  es: {
+    dark: 'Cambiar a modo noche',
+    light: 'Cambiar a modo claro'
+  },
+  ca: {
+    dark: 'Canviar a mode fosc',
+    light: 'Canviar a mode clar'
+  },
+  en: {
+    dark: 'Switch to dark mode',
+    light: 'Switch to light mode'
+  }
+};
+
 function applyLang(lang) {
   currentLang = lang;
   const dict = i18n[lang];
@@ -255,6 +270,8 @@ function applyLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
+
+  updateThemeToggleLabels();
 }
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -263,6 +280,50 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     applyLang(lang);
   });
 });
+
+/* ===========================
+   THEME TOGGLE
+=========================== */
+const THEME_KEY = 'portfolio-theme';
+const themeButtons = document.querySelectorAll('[data-theme-toggle]');
+
+function getInitialTheme() {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    return savedTheme;
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function updateThemeToggleLabels() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const labels = themeLabelMap[currentLang] || themeLabelMap.es;
+  const nextLabel = isDark ? labels.light : labels.dark;
+
+  themeButtons.forEach(btn => {
+    btn.setAttribute('aria-label', nextLabel);
+    btn.setAttribute('title', nextLabel);
+    btn.textContent = isDark ? '☀' : '🌙';
+  });
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem(THEME_KEY, theme);
+  updateThemeToggleLabels();
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+}
+
+themeButtons.forEach(btn => {
+  btn.addEventListener('click', toggleTheme);
+});
+
+applyTheme(getInitialTheme());
 
 /* ===========================
    NAVBAR SCROLL
